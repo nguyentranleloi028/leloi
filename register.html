@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng ký | Cửa hàng</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #00c6ff, #007bff);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI';
+    }
+    .register-container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      width: 350px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    h2 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #007bff;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .switch {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .switch a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="register-container">
+    <h2>Đăng ký tài khoản</h2>
+    <input id="signupName" type="text" placeholder="Họ và tên">
+    <input id="signupEmail" type="email" placeholder="Email">
+    <input id="signupPassword" type="password" placeholder="Mật khẩu">
+    <input id="signupConfirm" type="password" placeholder="Xác nhận mật khẩu">
+    <button onclick="signup()">Đăng ký</button>
+    <div class="switch">
+      Đã có tài khoản? <a href="login.html">Đăng nhập</a>
+    </div>
+  </div>
+
+  <script>
+    function signup() {
+      const name = document.getElementById("signupName").value.trim();
+      const email = document.getElementById("signupEmail").value.trim();
+      const password = document.getElementById("signupPassword").value;
+      const confirm = document.getElementById("signupConfirm").value;
+
+      // Kiểm tra nhập trống
+      if (!name || !email || !password || !confirm) {
+        alert("Vui lòng nhập đầy đủ thông tin!");
+        return;
+      }
+
+      // Kiểm tra mật khẩu trùng khớp
+      if (password !== confirm) {
+        alert("Mật khẩu xác nhận không khớp!");
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const exists = users.some(u => u.email === email);
+
+      if (exists) {
+        alert("Email này đã được đăng ký!");
+        return;
+      }
+
+      // Lưu người dùng mới
+      users.push({ name, email, password });
+      localStorage.setItem('users', JSON.stringify(users));
+
+      alert("Đăng ký thành công! Hãy đăng nhập.");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

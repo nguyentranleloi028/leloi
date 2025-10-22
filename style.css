@@ -1,0 +1,210 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+}
+
+header {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 220px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.btn {
+  background: #007bff;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+.product-card-detail {
+  display: flex;
+  gap: 20px;
+}
+
+.product-card-detail img {
+  width: 300px;
+  height: auto;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+}
+.table img {
+  border: 1px solid #ddd;
+  background: #f8f9fa;
+}
+.btn {
+  border-radius: 6px;
+}
+.modal-content {
+  border-radius: 10px;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+}
+
+header h1, header h2 {
+  font-weight: 600;
+}
+
+.product-card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+}
+.table img {
+  border: 1px solid #ddd;
+  background: #f8f9fa;
+}
+.btn {
+  border-radius: 6px;
+}
+.modal-content {
+  border-radius: 10px;
+}
+/* --- Footer --- */
+
+.footer {
+    background: #f9f9f9;
+    padding: 40px 0 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.footer-container {
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    width: 23%;
+    min-width: 220px;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.footer-col p, .footer-col li, .footer-col a {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col a:hover {
+    color: #ee4d2d;
+}
+
+/* Icon thanh toán */
+.payment-icons img {
+    height: 25px;
+    margin: 5px;
+}
+
+/* Ô nhập email */
+.footer-col input {
+    padding: 8px;
+    width: 80%;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+.footer-col button {
+    margin-top: 8px;
+    padding: 8px 12px;
+    border: none;
+    background: #ee4d2d;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Mạng xã hội */
+.social-icons a {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+.social-icons a:hover {
+    color: #ee4d2d;
+}
+
+/* App links */
+.app-links img {
+    height: 40px;
+    margin: 5px 0;
+}
+/* Dòng cuối */
+.footer-bottom {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 13px;
+    color: #666;
+}

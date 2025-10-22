@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng nhập | Cửa hàng</title>
+  <style>
+    body { background: linear-gradient(135deg, #007bff, #00c6ff); height: 100vh; display: flex; align-items: center; justify-content: center; font-family: 'Segoe UI'; }
+    .login-container { background: #fff; padding: 30px 40px; border-radius: 15px; width: 350px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+    input { width: 100%; padding: 10px; margin: 8px 0; border-radius: 6px; border: 1px solid #ccc; }
+    button { width: 100%; padding: 10px; border: none; background: #007bff; color: white; font-size: 16px; border-radius: 6px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .switch { margin-top: 15px; font-size: 14px; }
+    .switch a { color: #007bff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Đăng nhập</h2>
+    <input id="loginEmail" type="email" placeholder="Email">
+    <input id="loginPassword" type="password" placeholder="Mật khẩu">
+    <button onclick="login()">Đăng nhập</button>
+    <div class="switch">
+      Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (user) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        alert("Đăng nhập thành công!");
+        window.location.href = "index.html";
+      } else {
+        alert("Sai email hoặc mật khẩu!");
+      }
+    }
+  </script>
+</body>
+</html>
